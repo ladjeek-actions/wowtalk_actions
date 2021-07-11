@@ -30,7 +30,7 @@ jobs:
         env:
           TOKEN: ${{ secrets.MYTOKEN }}
         run: |
-          curl -H "Authorization: token $TOKEN" -o issues-api.json
+          curl -H "Authorization: token $TOKEN" https://api.github.com/repos/ladjeek-actions/wowtalk-actions/issues -o issues-api.json
           sed -i '1d' issues-api.json
           sed -i '$d' issues-api.json
           
