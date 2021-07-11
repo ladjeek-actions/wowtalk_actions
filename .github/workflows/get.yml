@@ -31,8 +31,6 @@ jobs:
           TOKEN: ${{ secrets.MYTOKEN }}
         run: |
           curl -H "Authorization: token ${{ secrets.MYTOKEN }}" https://api.github.com/repos/ladjeek-actions/wowtalk-actions/issues -o issues-api.json
-          sed -i '1d' issues-api.json
-          sed -i '$d' issues-api.json
           
       - name: Commit
         run: |
