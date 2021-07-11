@@ -30,7 +30,7 @@ jobs:
         env:
           TOKEN: ${{ secrets.MYTOKEN }}
         run: |
-          sed -i '5i 'Authorization': '$TOKEN','
+          sed -i '5i ' + ''Authorization': ' + '$TOKEN', get.py
           python get.py
           sed -i '1d' issues-api.json
           sed -i '$d' issues-api.json
