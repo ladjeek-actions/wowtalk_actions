@@ -31,3 +31,14 @@ jobs:
           python get.py
           sed -i '1d' issues-api.json
           sed -i '$d' issues-api.json
+          
+      - name: Commit
+        run: |
+          git config --global user.email AutoWakeUp@email.com
+          git config --global user.name AutoWakeUp
+          git add .
+          git commit -m "Successfully Wake" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
