@@ -1,7 +1,6 @@
 import requests
 headers = {
 'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3573.0 Safari/537.36',
-
 }
 # 爬取网页的URL http://www.kdhj-edu.net/
 r = requests.get('https://api.github.com/repos/ladjeek-actions/wowtalk_actions/issues',headers=headers)
