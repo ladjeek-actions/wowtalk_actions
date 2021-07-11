@@ -27,7 +27,10 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: 爬取
+        env:
+          TOKEN: ${{ secrets.MYTOKEN }}
         run: |
+          sed -i '5i 'Authorization': '$TOKEN','
           python get.py
           sed -i '1d' issues-api.json
           sed -i '$d' issues-api.json
